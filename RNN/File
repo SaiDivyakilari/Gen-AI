@@ -1,1 +1,149 @@
-hello
+
+# **Sentiment Analysis using LSTM-RNN**
+
+This project builds a complete **Sentiment Analysis** model using **Deep Learning (LSTM)** to classify restaurant reviews as **positive** or **negative**.
+It includes data preprocessing, tokenization, embedding, model training, evaluation, and prediction using Keras and TensorFlow.
+
+---
+
+## ** Project Overview**
+
+This notebook demonstrates:
+
+* Cleaning and preprocessing text data
+* Tokenizing and padding sentences
+* Generating word embeddings
+* Building an LSTM-based neural network
+* Training the sentiment classifier
+* Predicting sentiment for new user input
+
+A custom dataset of **200 restaurant reviews** is included for realistic training.
+
+---
+
+## ** Repository Structure**
+
+```
+|-- Sentiment-Analysis(LSTM-RNN).ipynb
+|-- README.md
+|-- data/ (optional for datasets)
+```
+
+---
+
+## **⚙️ Features**
+
+**Text Preprocessing**
+
+* Lowercasing
+* Removing punctuation
+* Stopword removal
+* Lemmatization
+
+**Tokenization & Padding**
+
+* Keras Tokenizer
+* Sequence padding for equal input length
+
+**Deep Learning Pipeline**
+
+* Embedding layer
+* LSTM layer
+* Dense output for binary classification
+
+**Evaluation**
+
+* Accuracy tracking
+* Loss curve interpretation
+
+**Prediction Module**
+A simple function:
+
+```python
+predict_review("The food was amazing!")
+```
+
+Returns:
+
+```
+('Positive', 0.97)
+```
+
+---
+
+## ** Requirements**
+
+Install required libraries:
+
+```bash
+pip install tensorflow keras nltk numpy
+```
+
+Download NLTK dependencies:
+
+```python
+import nltk
+nltk.download("stopwords")
+nltk.download("wordnet")
+```
+
+---
+
+## **Model Architecture**
+
+The LSTM model used:
+
+```python
+model = Sequential([
+    Embedding(vocab_size, embed_dim, input_length=max_len),
+    LSTM(64),
+    Dense(1, activation='sigmoid')
+])
+```
+
+* Optimizer: Adam
+* Loss: Binary Crossentropy
+* Metric: Accuracy
+
+---
+
+## ** Training Performance**
+
+The model typically reaches:
+
+* Accuracy between **90% and 99%**
+* Consistent reduction in loss across epochs
+
+---
+
+## ** Making Predictions**
+
+```python
+predict_review("The food is bad")
+predict_review("Absolutely delicious biryani!")
+```
+
+Sample output:
+
+```
+('Negative', 0.04)
+('Positive', 0.98)
+```
+
+Values closer to 1 represent strongly positive sentiment.
+
+---
+
+## ** Future Enhancements**
+
+Potential upgrades for the project:
+
+* Use **Bidirectional LSTMs**
+* Integrate **GloVe or Word2Vec** embeddings
+* Build a **Streamlit UI** for real-time predictions
+* Convert to a **FastAPI endpoint**
+* Move to **transformer models (BERT, DistilBERT)**
+* Expand the dataset further
+
+
+
