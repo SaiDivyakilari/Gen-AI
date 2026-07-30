@@ -13,3 +13,9 @@ mteb
 ipykernel
 langchain_google_genai
 langchain-openai
+openpyxl # to scrape the data to excel
+playwright==1.44.0
+beautifulsoup4
+lxml
+requests
+pandas
