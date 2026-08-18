@@ -2,13 +2,17 @@
 env/
 .venv/
 venv/
+prompt_env/
+rag_env/
+*_env/
 
 # Python cache
 __pycache__/
 *.py[cod]
 
-# Environment variables
+# Environment/API key files
 .env
+*.env
 
 # Jupyter
 .ipynb_checkpoints/
